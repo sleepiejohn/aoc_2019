@@ -1,3 +1,5 @@
+Code.require_file("solution.exs")
+
 defmodule DayOne do
   @doc """
   Calculate the fuel needed for a given mass.
@@ -47,3 +49,10 @@ defmodule DayOneTests do
     end
   end
 end
+
+Solution.part(2, fn ->
+  File.read!("inputs/1.txt")
+  |> String.split("\n")
+  |> Enum.map(&String.to_integer/1)
+  |> DayOne.spaceship_fuel()
+end)
